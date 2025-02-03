@@ -5,6 +5,8 @@ services:
       - "9000:80" # Maps port 8080 on the host to port 80 in the container
     depends_on:
       - mysql # Ensures MySQL starts before the PHP app
+    volumes:
+      - ./app:/var/www/html # Mounts the app directory to the container
 
   mysql:
     image: mysql:8.0 # Uses the official MySQL image
