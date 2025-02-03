@@ -9,9 +9,7 @@
         .container {
             max-width: 80%;
             margin:auto;
-            background-color: black;
-            color: white;
-            padding:10px
+            background-color: blue;
         }
     </style>
 </head>
