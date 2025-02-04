@@ -66,11 +66,11 @@
 
                     // Read query to fetch data from 'users' table
                     $sql = "SELECT id, name, email FROM tbl_users";
-                    $stmt = $pdo->query($sql);
+                    $result = $pdo->query($sql);
 
                     // Display data
                     echo "<br><br><h3>Users List:</h3>";
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                         echo "ID: " . $row['id'] . " - Name: " . $row['name'] . " - Email: " . $row['email'] . "<br>";
                     }
 
