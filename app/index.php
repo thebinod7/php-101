@@ -53,6 +53,31 @@
 
                 printFive();
 
+                // Connect database
+                $host = "mysql";
+                $user = "root";
+                $pass = "root";
+                $dbname = "demo_db"; // replace with your DB name
+                try {
+                    // PDO connection
+                    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+                    $pdo = new PDO($dsn, $user, $pass);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    // Read query to fetch data from 'users' table
+                    $sql = "SELECT id, name, email FROM tbl_users";
+                    $stmt = $pdo->query($sql);
+
+                    // Display data
+                    echo "<br><br><h3>Users List:</h3>";
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "ID: " . $row['id'] . " - Name: " . $row['name'] . " - Email: " . $row['email'] . "<br>";
+                    }
+
+                } catch (PDOException $e) {
+                    echo "Connection failed: " . $e->getMessage();
+                }
+
             ?>
         </div>
     </div>
