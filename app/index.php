@@ -57,7 +57,7 @@
                 $host = "mysql";
                 $user = "root";
                 $pass = "root";
-                $dbname = "demo_db"; // replace with your DB name
+                $dbname = "demo_db"; 
                 try {
                     // PDO connection
                     $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
